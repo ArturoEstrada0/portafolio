@@ -2,7 +2,7 @@ import React from 'react';
 
 const Education = () => {
   return (
-    <section id='educacion' className="py-12 ">
+    <section id="educacion" className="py-12 ">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-start justify-center">
           <div className="md:w-1/2 md:pr-6 animate__animated animate__fadeInLeft">

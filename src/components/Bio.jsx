@@ -2,7 +2,7 @@ import React from 'react';
 
 const Bio = () => {
     return (
-        <section id='bio' className="py-12 bg-gray-100">
+        <section id="bio" className="py-12 bg-gray-100">
             <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center">
                 <div className="md:w-1/2 mb-6 md:mb-0 animate__animated animate__fadeInLeft">
                     <img src="../../fotoPerfil.jpeg" alt="Tu Foto" className="w-full rounded-lg shadow-lg" />

@@ -8,7 +8,6 @@ const Navbar = () => {
   const underlineRef = useRef(null);
 
   const menuItems = [
-    { name: 'Logo', href: '#', isLogo: true },
     { name: 'Sobre mí', href: '#bio' },
     { name: 'Educación', href: '#educacion' },
     { name: 'Experiencia', href: '#tecnologias' },
@@ -39,6 +38,30 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleScroll = () => {
+    const sections = menuItems
+      .filter(item => !item.isLogo) // Excluye el logo
+      .map(item => document.querySelector(item.href));
+    
+    const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const section = sections[i];
+      if (section && section.offsetTop <= scrollPosition) {
+        setActiveIndex(i + 1); // Ajuste de índice ya que excluimos el logo
+        break;
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Llamar a handleScroll para configurar el estado inicial
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   useEffect(() => {
     const underline = underlineRef.current;
     if (underline && (hoveredIndex !== null || activeIndex !== null)) {
@@ -65,7 +88,7 @@ const Navbar = () => {
               <a
                 key={index}
                 href={item.href}
-                className={`px-3 py-2 text-gray-300 hover:text-blue-300 transition-colors duration-300 ${activeIndex === index ? 'text-blue-300' : ''}`}
+                className={`nav-item-${index} px-3 py-2 text-gray-300 hover:text-blue-300 transition-colors duration-300 ${activeIndex === index ? 'text-blue-300' : ''}`}
                 onClick={(e) => handleItemClick(e, index)}
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
@@ -111,6 +134,7 @@ const Navbar = () => {
           ))}
         </div>
       </div>
+      <div ref={underlineRef} className="underline absolute bottom-0 h-0.5 bg-blue-300 transition-all duration-300"></div>
     </nav>
   );
 };

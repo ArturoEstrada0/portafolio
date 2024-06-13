@@ -47,7 +47,7 @@ const Projects = () => {
       link: '#', // Agrega el enlace correspondiente
     },
     {
-      title: 'SISOGEM - Sistema de Organos de Gobierno del Estado de Michocán',
+      title: 'SISOGEM - Sistema de Órganos de Gobierno del Estado de Michoacán',
       description:
         'Primer lugar en 2023 con este proyecto. Desarrollé un sistema que incluye firmas digitales, editor de documentos en tiempo real, y repositorio de archivos.',
       year: 2023,
@@ -100,12 +100,20 @@ const Projects = () => {
   };
 
   return (
-    <section id="proyectos" className="py-12 bg-white">
+    <section id="proyectos" className="py-0 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 mb-10">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-semibold mb-8 text-gray-800">Proyectos</h2>
+        <h2 className="text-5xl font-extrabold text-center mb-12 text-gray-800 animate__animated animate__fadeIn">
+          <span className=" text-purple-700">Pro</span>
+          <span className="text-purple-800">yec</span>
+          <span className="text-purple-900">tos</span>
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="block rounded-lg overflow-hidden shadow-lg">
+            <div
+              key={index}
+              className="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-500 animate__animated animate__fadeInUp"
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
               <img
                 src={project.image}
                 alt={project.title}
