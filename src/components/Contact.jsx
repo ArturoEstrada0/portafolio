@@ -2,11 +2,11 @@ import React from 'react';
 
 const Contact = () => {
     return (
-        <section className="relative flex items-center justify-center h-screen overflow-hidden">
-          <video className="absolute top-0 left-0 min-w-full min-h-full z-0 object-cover" autoPlay loop muted>
-    <source src="fondoOscuro2.mp4" type="video/mp4" />
-    Tu navegador no soporta el elemento de video.
-</video>
+        <section id='contacto' className="relative flex items-center justify-center h-screen overflow-hidden">
+            <video className="absolute top-0 left-0 min-w-full min-h-full z-0 object-cover" autoPlay loop muted>
+                <source src="fondoOscuro2.mp4" type="video/mp4" />
+                Tu navegador no soporta el elemento de video.
+            </video>
 
             <div className="relative z-30 text-white text-center">
                 <h2 className="text-5xl font-bold mb-4 animate__animated animate__fadeInDown">¡Contáctame!</h2>

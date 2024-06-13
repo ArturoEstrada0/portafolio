@@ -1,0 +1,27 @@
+/* Estilo para el contenedor del elemento del menú */
+.nav-item {
+    position: relative; /* Necesario para alinear el pseudo-elemento */
+    display: inline-block; /* Para que el contenedor se ajuste al contenido */
+  }
+  
+  /* Pseudo-elemento para la burbuja */
+  .nav-item::after {
+    content: '';
+    position: absolute;
+    top: 50%; /* Alineación verticalmente centrada */
+    left: 50%; /* Alineación horizontalmente centrada */
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%; /* Forma de círculo */
+    background-color: rgba(255, 255, 255, 0.3); /* Color de fondo con transparencia */
+    z-index: -1; /* Detrás del contenido */
+    transition: width 0.3s ease, height 0.3s ease; /* Transición suave */
+  }
+  
+  /* Estilo para la burbuja activada */
+  .nav-item:hover::after {
+    width: 200%; /* Tamaño grande para la iluminación */
+    height: 200%;
+  }
+  
