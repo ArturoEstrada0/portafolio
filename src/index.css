@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.monserat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}

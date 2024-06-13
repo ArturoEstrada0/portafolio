@@ -1,0 +1,28 @@
+.back-to-top {
+    position: fixed;
+    bottom: 2rem; /* Ajusta esta propiedad según tu preferencia */
+    right: 1rem; /* Ajusta esta propiedad según tu preferencia */
+    opacity: 0;
+    transition: opacity 0.4s;
+    z-index: 1000; /* Ajusta según sea necesario */
+  }
+  
+  .back-to-top.visible {
+    opacity: 1;
+  }
+  
+  .back-to-top button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem; /* Ajusta el tamaño del botón según tu diseño */
+    height: 2.5rem; /* Ajusta el tamaño del botón según tu diseño */
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .back-to-top button:hover {
+    transform: translateY(-0.2rem); /* Efecto de elevación al pasar el ratón */
+  }
+  

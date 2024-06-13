@@ -1,0 +1,24 @@
+/* src/index.css */
+.nav-item {
+  position: relative;
+}
+
+.nav-item::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.nav-item:hover::before,
+.nav-item-active::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
