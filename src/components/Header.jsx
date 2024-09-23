@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
-import { scroller } from 'react-scroll';
+import { Button, scroller } from 'react-scroll';
 import  './Header.css';
+import ButtonWithCursorEffect from './ButtonCursorEfect';
 
 const Header = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -60,8 +61,9 @@ const Header = () => {
         <h1 className="text-5xl font-bold mb-4 animate__animated animate__fadeInDown">
           Hola, soy <span className='text-blue-400'>Arturo Estrada</span>
         </h1>
+      <ButtonWithCursorEffect />
         <p className="text-xl font-light mb-4 animate__animated animate__fadeInUp animate__delay-1s">
-          Desarrollador Full Stack Freelancer con 3 años de experiencia.
+          Desarrollador Frontend Freelancer con 3 años de experiencia.
         </p>
 
         <div className="mt-8 animate__animated animate__fadeIn animate__delay-2s">

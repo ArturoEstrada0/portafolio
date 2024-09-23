@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "arturo-estrada",
     "public": "dist",
     "ignore": [
       "firebase.json",

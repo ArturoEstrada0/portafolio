@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCodepen, faFigma, faMeta, faWix } from "@fortawesome/free-brands-svg-icons";
+import {
+  faCodepen,
+  faFigma,
+  faMeta,
+  faWix,
+} from "@fortawesome/free-brands-svg-icons";
 import {
   CodeigniterPlain,
   PhpPlain,
@@ -18,7 +23,8 @@ import {
   TailwindcssOriginal,
   AntdesignOriginal,
 } from "devicons-react";
-import Drawer from "./Drawer"; // Ajusta la ruta según la ubicación de tu Drawer
+import Drawer from "./Drawer";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -141,6 +147,22 @@ const Projects = () => {
       id="proyectos"
       className="py-0 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 mb-10"
     >
+      <motion.div
+        className="box"
+        animate={{
+          scale: [1, 2, 2, 1, 1],
+          rotate: [0, 0, 180, 180, 0],
+          borderRadius: ["0%", "0%", "50%", "50%", "0%"],
+        }}
+        transition={{
+          duration: 2,
+          ease: "easeInOut",
+          times: [0, 0.2, 0.5, 0.8, 1],
+          repeat: Infinity,
+          repeatDelay: 1,
+        }}
+      />
+  
       <div className="container mx-auto px-6">
         <h2 className="text-5xl font-extrabold text-center mb-12 text-gray-800 animate__animated animate__fadeIn">
           <span className=" text-purple-700">Pro</span>
@@ -264,22 +286,20 @@ const Projects = () => {
                 <p className="text-gray-700 mt-2">Año: {project.year}</p>
                 <div className="p-4 ">
                   {project.isPublic ? (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      onClick={() => openDrawer(project.title, project.link)}
                       className="block w-full text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
                     >
                       <FontAwesomeIcon icon={faCodepen} className="mr-2" />
                       Ver proyecto
-                    </a>
+                    </button>
                   ) : (
                     <button
                       disabled
                       className="block w-full bg-gray-400 text-white font-bold py-2 px-4 rounded cursor-not-allowed"
                     >
                       <FontAwesomeIcon icon={faCodepen} className="mr-2" />
-                       Proyecto privado
+                      Proyecto privado
                     </button>
                   )}
                 </div>

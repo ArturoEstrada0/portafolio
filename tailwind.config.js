@@ -8,6 +8,18 @@ module.exports = {
       },
       colors: {
         red: {
+          'dark': '#121212',
+          'light-dark': '#1D1D1D',
+          'soft-red': '#FF4B5C',
+          'soft-blue': '#60A5FA',
+          'soft-green': '#34D399',
+          'soft-yellow': '#FBBF24',
+          'soft-indigo': '#6366F1',
+          'soft-purple': '#A78BFA',
+          'soft-pink': '#EC4899',
+          'gray': '#9CA3AF',
+          'light-gray': '#F3F4F6',
+          
           '50': '#ffebee',
           '100': '#ffcdd2',
           '200': '#ef9a9a',

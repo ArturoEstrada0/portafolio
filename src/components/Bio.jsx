@@ -35,9 +35,15 @@ const Bio = () => {
           </h2>
           <p className="post-title text-lg text-gray-800 mb-6">
             Graduado como técnico informático, realicé prácticas profesionales
-            en Grupo FAME, gestionando y manteniendo equipos informáticos para
-            marcas como Nissan y Toyota. Exploré el diseño web y gráfico,
-            desarrollando sitios web y logotipos para empresas locales.
+            en{" "}
+            <a href="https://www.grupofame.com/inicio" target="_blank">
+              <span className=" text-blue-800 font-bold underline">
+                Grupo FAME
+              </span>{" "}
+            </a>
+            , gestionando y manteniendo equipos informáticos para marcas como
+            Nissan y Toyota. Exploré el diseño web y gráfico, desarrollando
+            sitios web y logotipos para empresas locales.
           </p>
           <p className="post-title text-lg text-gray-800 mb-6">
             Ganador de reconocimiento en proyectos de sistema DUAL, desarrollé
@@ -58,6 +64,21 @@ const Bio = () => {
             <div className="flex flex-wrap">
               <span className="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
                 Gestión de proyectos
+              </span>
+              <span className="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+                Resolucion de Problemas
+              </span>
+              <span className="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+                Comunicación efectiva
+              </span>
+              <span className="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+                Gestión de Tiempo
+              </span>
+              <span className="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+                Aprendizaje Continuo
+              </span>
+              <span className="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+                Trabajo bajo presión
               </span>
               <span className="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
                 Diseñador
@@ -89,15 +110,25 @@ const Bio = () => {
               <span className="inline-block bg-purple-800 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
                 Sistemas Administrativos
               </span>
+              <span className="inline-block bg-purple-800 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+               Diseño de Interfaces de Usuario
+              </span>
+              <span className="inline-block bg-purple-800 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+                React
+              </span>
+              <span className="inline-block bg-purple-800 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+                Next
+              </span>
+              
               {/* Agrega más intereses personales según sea necesario */}
             </div>
           </div>
         </div>
       </div>
-        {/* Elemento de iluminación */}
-        {isHovered && (
+      {/* Elemento de iluminación */}
+      {isHovered && (
         <div
-          className={`bubble-effect ${isStretching ? 'stretch' : ''}`}
+          className={`bubble-effect ${isStretching ? "stretch" : ""}`}
           style={{ left: bubblePosition.x, top: bubblePosition.y }}
         ></div>
       )}
