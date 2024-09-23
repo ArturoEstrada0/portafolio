@@ -1,0 +1,39 @@
+
+
+
+
+.post {
+	display: flex;
+	text-decoration: none;
+	color: inherit;
+	position: relative;
+	background-color: #FFF;
+	&:before {
+		position: absolute; 
+		left: 0;
+		bottom: 0;
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-color: #000;
+		transform-origin: 0 top 0;
+		transform: scaleY(0);
+		transition: .4s ease-out;
+	}
+	
+	&:hover {
+		.post-title {
+			color: #FFF;
+		}
+		&:before {
+			transform: scaleY(1);
+		}
+	}
+}
+
+.post-title {
+	position: relative;
+	
+	transition: .4s ease-out;
+}

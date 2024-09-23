@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
 import * as DevIcons from 'devicons-react';
 
 const Skills = () => {
@@ -6,6 +7,7 @@ const Skills = () => {
         'Lenguajes de Programación': [
             { name: 'JS', logo: 'JavascriptOriginal' },
             { name: 'C++', logo: 'CplusplusOriginal' },
+            { name: 'Python', logo: 'PythonOriginal' },
             { name: 'PHP', logo: 'PhpPlain' }
         ],
         'Frontend': [

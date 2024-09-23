@@ -13,6 +13,7 @@ import Projects from './components/Proyects'
 import Contact from './components/Contact'
 import FloatingBubble from './components/FloatingBubble'
 import BackToTopButton from './components/BackToTop'
+import Card from './components/ Card'
 
 export default function App() {
   return (
@@ -21,8 +22,9 @@ export default function App() {
       <FloatingBubble />
       <Header />
       <Skills />
+      <Card />
       <Bio />
-      <Education />
+      {/* <Education /> */}
       <Projects />
       <Contact />
       <BackToTopButton />

@@ -52,17 +52,19 @@ const Header = () => {
       onMouseEnter={handleMouseEnter} // Cuando el cursor entra al encabezado
       onMouseLeave={handleMouseLeave} // Cuando el cursor sale del encabezado
       onMouseMove={handleMouseMove} // Maneja movimiento del ratón
+      style={{ cursor: 'none' }} // Hacer que el cursor del mouse sea invisible
+
     >
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-30 z-10"></div>
       <div className="relative z-30 p-5 text-center text-white">
         <h1 className="text-5xl font-bold mb-4 animate__animated animate__fadeInDown">
           Hola, soy <span className='text-blue-400'>Arturo Estrada</span>
         </h1>
-        <p className="text-xl font-light mb-4 animate__animated animate__fadeInUp animate__delay-2s">
+        <p className="text-xl font-light mb-4 animate__animated animate__fadeInUp animate__delay-1s">
           Desarrollador Full Stack Freelancer con 3 años de experiencia.
         </p>
 
-        <div className="mt-8 animate__animated animate__fadeIn animate__delay-4s">
+        <div className="mt-8 animate__animated animate__fadeIn animate__delay-2s">
           <button
             className="bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded-full mx-2 transition duration-300 transform hover:scale-110"
             onClick={() => scrollToSection('contacto')}
