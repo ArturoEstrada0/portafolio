@@ -1,18 +1,20 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { scroller } from 'react-scroll';
+import React, { useState, useEffect, useRef } from "react";
+import { scroller } from "react-scroll";
+import "../assets/nav.css";
 
 const Navbar = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isOpen, setIsOpen] = useState(false); // Estado para controlar si el menú hamburguesa está abierto
+  const [isScrolled, setIsScrolled] = useState(false); // Estado para controlar si el usuario ha hecho scroll
   const underlineRef = useRef(null);
 
   const menuItems = [
-    { name: 'Sobre mí', href: '#bio' },
-    { name: 'Educación', href: '#educacion' },
-    { name: 'Experiencia', href: '#tecnologias' },
-    { name: 'Proyectos', href: '#proyectos' },
-    { name: 'Contacto', href: '#contacto' },
+    { name: "Sobre mí", href: "#bio" },
+    { name: "Educación", href: "#educacion" },
+    { name: "Experiencia", href: "#tecnologias" },
+    { name: "Proyectos", href: "#proyectos" },
+    { name: "Contacto", href: "#contacto" },
   ];
 
   const handleItemClick = (e, index) => {
@@ -20,7 +22,7 @@ const Navbar = () => {
     scroller.scrollTo(menuItems[index].href.slice(1), {
       duration: 800,
       delay: 0,
-      smooth: 'easeInOutQuart'
+      smooth: "easeInOutQuart",
     });
     setActiveIndex(index);
     setIsOpen(false); // Cerrar el menú hamburguesa al hacer clic en un elemento
@@ -40,9 +42,9 @@ const Navbar = () => {
 
   const handleScroll = () => {
     const sections = menuItems
-      .filter(item => !item.isLogo) // Excluye el logo
-      .map(item => document.querySelector(item.href));
-    
+      .filter((item) => !item.isLogo) // Excluye el logo
+      .map((item) => document.querySelector(item.href));
+
     const scrollPosition = window.scrollY + window.innerHeight / 2;
 
     for (let i = sections.length - 1; i >= 0; i--) {
@@ -52,13 +54,20 @@ const Navbar = () => {
         break;
       }
     }
+
+    // Si el usuario ha hecho scroll más de 50px, cambiar el estado a true
+    if (window.scrollY > 50) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll(); // Llamar a handleScroll para configurar el estado inicial
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -77,10 +86,17 @@ const Navbar = () => {
   }, [hoveredIndex, activeIndex]);
 
   return (
-    <nav className="bg-black p-4 fixed w-full top-0 z-50">
+    <nav
+      className={`bg-deepblack p-4 fixed w-full top-0 z-50 ${
+        isScrolled ? "bg-white/90 " : ""
+      }`}
+    >
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white text-xl font-bold">
-          Arturo Adrián Estrada De La Torre
+          <a href="#" id="style-2" data-replace="Descaga mi CV">
+            <span className=" text-gray-500">Arturo Adrián</span> <span> </span>
+            <span>Estrada De La Torre</span>
+          </a>
         </div>
         <div className="flex items-center">
           <div className="hidden md:flex space-x-4">
@@ -88,10 +104,19 @@ const Navbar = () => {
               <a
                 key={index}
                 href={item.href}
-                className={`nav-item-${index} px-3 py-2 text-gray-300 hover:text-blue-300 transition-colors duration-300 ${activeIndex === index ? 'text-blue-300' : ''}`}
+                className={`nav-item-${index} px-3 py-2 text-gray-300 hover:text-blue-300 transition-colors duration-300 ${
+                  activeIndex === index ? "text-blue-300" : ""
+                }`}
                 onClick={(e) => handleItemClick(e, index)}
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
+                style={{ transition: "transform .2s" }} // Agrega esta línea
+                onMouseOver={(event) => {
+                  event.target.style.transform = "scale(1.1)";
+                }} // Agrega esta línea
+                onMouseOut={(event) => {
+                  event.target.style.transform = "";
+                }} // Agrega esta línea
               >
                 {item.name}
               </a>
@@ -120,13 +145,15 @@ const Navbar = () => {
         </div>
       </div>
       {/* Menú hamburguesa desplegable en dispositivos móviles */}
-      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
+      <div className={`md:hidden ${isOpen ? "block" : "hidden"}`}>
         <div className="flex flex-col items-center mt-2">
           {menuItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className={`block py-2 text-gray-300 hover:text-blue-300 transition-colors duration-300 ${activeIndex === index ? 'text-blue-300' : ''}`}
+              className={`block py-2 text-gray-300 hover:text-blue-300 transition-colors duration-300 ${
+                activeIndex === index ? "text-blue-300" : ""
+              }`}
               onClick={(e) => handleItemClick(e, index)}
             >
               {item.name}
@@ -134,7 +161,10 @@ const Navbar = () => {
           ))}
         </div>
       </div>
-      <div ref={underlineRef} className="underline absolute bottom-0 h-0.5 bg-blue-300 transition-all duration-300"></div>
+      <div
+        ref={underlineRef}
+        className="underline absolute bottom-0 h-0.5 bg-blue-300 transition-all duration-300"
+      ></div>
     </nav>
   );
 };

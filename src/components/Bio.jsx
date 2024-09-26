@@ -1,24 +1,12 @@
 import React from "react";
 import "../assets/card.css";
-import useCursorEffect from "./UseCursorEffect";
 const Bio = () => {
-  const {
-    isHovered,
-    bubblePosition,
-    isStretching,
-    handleMouseEnter,
-    handleMouseLeave,
-    handleMouseMove,
-  } = useCursorEffect();
 
   return (
     <section
       id="bio"
-      className="post py-12 bg-gray-100"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onMouseMove={handleMouseMove}
-      style={{ cursor: "none" }}
+      className=" py-12 relative z-10 text-white"
+    
     >
       {" "}
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center">
@@ -30,14 +18,14 @@ const Bio = () => {
           />
         </div>
         <div className="md:w-1/2 md:pl-10 animate__animated animate__fadeInRight">
-          <h2 className="text-3xl font-semibold mb-4 text-blue-600">
+          <h2 className="text-3xl font-semibold mb-4 text-white">
             Sobre mí
           </h2>
-          <p className="post-title text-lg text-gray-800 mb-6">
+          <p className="post-title text-lg text-white mb-6">
             Graduado como técnico informático, realicé prácticas profesionales
             en{" "}
             <a href="https://www.grupofame.com/inicio" target="_blank">
-              <span className=" text-blue-800 font-bold underline">
+              <span className=" text-blue-700 font-bold underline">
                 Grupo FAME
               </span>{" "}
             </a>
@@ -45,14 +33,14 @@ const Bio = () => {
             Nissan y Toyota. Exploré el diseño web y gráfico, desarrollando
             sitios web y logotipos para empresas locales.
           </p>
-          <p className="post-title text-lg text-gray-800 mb-6">
+          <p className="post-title text-lg text-white mb-6">
             Ganador de reconocimiento en proyectos de sistema DUAL, desarrollé
             plataformas de cursos en línea y sistemas innovadores para el
             gobierno. También contribuí al desarrollo de una plataforma
             inmobiliaria y actualmente trabajo en un proyecto de rastreo de
             vehículos.
           </p>
-          <p className="post-title text-lg text-gray-800 mb-6">
+          <p className="post-title text-lg text-white mb-6">
             Además, me dedico a la creación de contenido digital para redes
             sociales, brindando visibilidad a consultorios médicos y
             corporativos jurídicos.
@@ -125,13 +113,7 @@ const Bio = () => {
           </div>
         </div>
       </div>
-      {/* Elemento de iluminación */}
-      {isHovered && (
-        <div
-          className={`bubble-effect ${isStretching ? "stretch" : ""}`}
-          style={{ left: bubblePosition.x, top: bubblePosition.y }}
-        ></div>
-      )}
+     
     </section>
   );
 };

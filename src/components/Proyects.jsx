@@ -143,10 +143,7 @@ const Projects = () => {
   };
 
   return (
-    <section
-      id="proyectos"
-      className="py-0 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 mb-10"
-    >
+    <section id="proyectos" className=" relative z-10 ">
       <motion.div
         className="box"
         animate={{
@@ -162,7 +159,7 @@ const Projects = () => {
           repeatDelay: 1,
         }}
       />
-  
+
       <div className="container mx-auto px-6">
         <h2 className="text-5xl font-extrabold text-center mb-12 text-gray-800 animate__animated animate__fadeIn">
           <span className=" text-purple-700">Pro</span>

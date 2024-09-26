@@ -1,48 +1,52 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from "react";
 
 const useCursorEffect = () => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(true);
   const [bubblePosition, setBubblePosition] = useState({ x: -100, y: -100 });
   const [isStretching, setIsStretching] = useState(false);
-  const timeoutRef = useRef(null);
+  const currentElementRef = useRef(null); // Referencia para el elemento actual
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
+  // Función para detectar si el elemento tiene cursor pointer
+  const isPointerCursor = (element) => {
+    return window.getComputedStyle(element).cursor === "pointer";
   };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    setIsStretching(false); // Reiniciar el estiramiento cuando el cursor sale
-    clearTimeout(timeoutRef.current); // Limpiar el timeout
-  };
-
   const handleMouseMove = (e) => {
-    const boundingRect = e.currentTarget.getBoundingClientRect();
-    const offsetX = e.clientX - boundingRect.left;
-    const offsetY = e.clientY - boundingRect.top;
-
-    // Establecer posición de la burbuja
-    setBubblePosition({ x: offsetX - 30, y: offsetY - 30 });
-
-    // Detectar dirección del movimiento del cursor
-    if (!isStretching) {
-      setIsStretching(true); // Activar el estiramiento inicial
+    const elementUnderCursor = document.elementFromPoint(e.clientX, e.clientY);
+  
+    // Establecer la posición de la burbuja
+  setBubblePosition({ x: e.clientX - 15, y: e.clientY - 15 }); // Resta la mitad del tamaño de la burbuja
+  
+    if (isPointerCursor(elementUnderCursor)) {
+      // Activar el efecto de crecimiento
+      setIsStretching(true);
+      setIsHovered(true);
     }
-
-    // Reiniciar el timeout para volver a la forma original después de 100ms
-    clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => {
+  
+    // Si el elemento bajo el cursor ha cambiado y el elemento anterior tenía un cursor de puntero
+    if (currentElementRef.current && currentElementRef.current !== elementUnderCursor && isPointerCursor(currentElementRef.current)) {
+      // Restablecer el estado
+      setIsHovered(true);
       setIsStretching(false);
-    }, 100);
+    }
+  
+    // Actualizar el elemento actual
+    currentElementRef.current = elementUnderCursor;
   };
+
+  useEffect(() => {
+    // Agregar los eventos globales de mouse
+    document.addEventListener("mousemove", handleMouseMove);
+
+    // Limpiar los eventos al desmontar el componente
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []); // El efecto se ejecuta solo una vez, al montar el componente
 
   return {
     isHovered,
     bubblePosition,
     isStretching,
-    handleMouseEnter,
-    handleMouseLeave,
-    handleMouseMove,
   };
 };
 

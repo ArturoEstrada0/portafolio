@@ -1,16 +1,17 @@
 .bubble-effect {
-    position: absolute;
-    content: '';
-    width: 60px; /* Tamaño inicial de la burbuja */
-    height: 60px;
-    background-color: rgba(255, 255, 255, 0.675); /* Color y opacidad */
-    border-radius: 50%; /* Forma redonda */
-    pointer-events: none; /* Evitar interferencia con eventos */
-    z-index: 100; /* Por encima del contenido */
-    transition: width 0.5s ease, height 0.5s ease, transform 0.5s ease; /* Transiciones suaves */
-  }
-  
-  .stretch {
-    transform: scale(1.5); /* Estiramiento de la burbuja */
-  }
-  
+  position: absolute;
+  content: '';
+  width: 30px; /* Tamaño inicial de la burbuja */
+  height: 30px;
+  background-color: rgba(91, 214, 91, 0.675); /* Color y opacidad */
+  border-radius: 50%; /* Forma redonda */
+  pointer-events: none; /* Evitar interferencia con eventos */
+  z-index: 100; /* Por encima del contenido */
+  transition: width 0.1s ease, height 0.1s ease, transform 0.5s ease; /* Transiciones suaves */
+}
+
+.stretch {
+  transform: scale(2.5); /* Estiramiento de la burbuja */
+  background-color: rgba(94, 178, 94, 0.547); /* Color y opacidad */
+
+}

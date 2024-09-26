@@ -13,18 +13,28 @@ import Projects from './components/Proyects'
 import Contact from './components/Contact'
 import FloatingBubble from './components/FloatingBubble'
 import BackToTopButton from './components/BackToTop'
-import Card from './components/ Card'
-import ButtonWithCursorEffect from './components/ButtonCursorEfect'
+import useCursorEffect from './components/UseCursorEffect'
+import Squares from './components/Squares'
 
 export default function App() {
+  const {
+    isHovered,
+    bubblePosition,
+    isStretching,
+    bubbleColor,
+    isRippling,
+    handleMouseEnter,
+    handleMouseLeave,
+    handleMouseMove,
+    handleButtonHover, // Cambiar el color de la burbuja y activar el efecto de onda
+  } = useCursorEffect();
   return (
     <div>
+      <Squares />
       <Nav />
       <FloatingBubble />
       <Header />
-      <ButtonWithCursorEffect />
       <Skills />
-      <Card />
       <Bio />
       {/* <Education /> */}
       <Projects />
@@ -33,6 +43,16 @@ export default function App() {
       {/* <Feature />
       <Blog />
       <Footer /> */}
+      {isHovered && (
+        <div
+          className={`bubble-effect ${isStretching ? 'stretch' : ''} ${isRippling ? 'ripple' : ''}`}
+          style={{
+            top: bubblePosition.y,
+            left: bubblePosition.x,
+            backgroundColor: bubbleColor, // Aplicar el color dinámico
+          }}
+        />
+      )}
     </div>
   )
 }
