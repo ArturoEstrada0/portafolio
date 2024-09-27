@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
+        'fira': ['Fira Code', 'monospace'],
+        'montserrat': ['Montserrat', 'sans-serif'],
       },
       colors: {
         'charcoal': {
@@ -19,6 +20,7 @@ module.exports = {
           800: '#4f4f4f',
           900: '#333333',
         },
+        'fondo': '#141414',
         'deepblack': '#0D0D0D',
         red: {
           dark: "#121212",

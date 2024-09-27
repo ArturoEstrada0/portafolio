@@ -1,11 +1,5 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.monserat {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.roboto {
-  font-family: 'Roboto', sans-serif;
-}
+@import 'typeface-fira-code';
+@import 'typeface-montserrat';

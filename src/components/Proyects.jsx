@@ -144,21 +144,7 @@ const Projects = () => {
 
   return (
     <section id="proyectos" className=" relative z-10 ">
-      <motion.div
-        className="box"
-        animate={{
-          scale: [1, 2, 2, 1, 1],
-          rotate: [0, 0, 180, 180, 0],
-          borderRadius: ["0%", "0%", "50%", "50%", "0%"],
-        }}
-        transition={{
-          duration: 2,
-          ease: "easeInOut",
-          times: [0, 0.2, 0.5, 0.8, 1],
-          repeat: Infinity,
-          repeatDelay: 1,
-        }}
-      />
+     
 
       <div className="container mx-auto px-6">
         <h2 className="text-5xl font-extrabold text-center mb-12 text-gray-800 animate__animated animate__fadeIn">
