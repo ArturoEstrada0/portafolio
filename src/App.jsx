@@ -1,21 +1,21 @@
-import React from 'react'
-import './App.css'
+import React from "react";
+import "./App.css";
 
-import { Feature } from './components/Feature'
-import { Blog } from './components/Blog'
-import { Footer } from './components/Footer'
-import Nav from './components/Nav'
-import Header from './components/Header'
-import Skills from './components/Skills'
-import Bio from './components/Bio'
-import Education from './components/Education'
-import Projects from './components/Proyects'
-import Contact from './components/Contact'
-import FloatingBubble from './components/FloatingBubble'
-import BackToTopButton from './components/BackToTop'
-import useCursorEffect from './components/UseCursorEffect'
-import Squares from './components/Squares'
-import ProjectShowcase from './components/ProjectShowcase'
+import { Feature } from "./components/Feature";
+import { Blog } from "./components/Blog";
+import { Footer } from "./components/Footer";
+import Nav from "./components/Nav";
+import Header from "./components/Header";
+import Skills from "./components/Skills";
+import Bio from "./components/Bio";
+import Education from "./components/Education";
+import Projects from "./components/Proyects";
+import Contact from "./components/Contact";
+import FloatingBubble from "./components/FloatingBubble";
+import BackToTopButton from "./components/BackToTop";
+import useCursorEffect from "./components/UseCursorEffect";
+import Squares from "./components/Squares";
+import ProjectShowcase from "./components/ProjectShowcase";
 
 export default function App() {
   const {
@@ -34,7 +34,7 @@ export default function App() {
     {
       title: "Laboratorios Mafra - Tienda en Línea",
       description:
-        "Desarrollé una tienda en línea ligada a redes sociales para aumentar el tráfico. También trabajé en el diseño de logotipos y diseños para empresas.",
+        "Desarrollé una plataforma de comercio electrónico integrada con redes sociales para optimizar la afluencia de visitantes. Además, participé en la creación de logotipos y diseños corporativos, mejorando la identidad visual de diversas empresas.",
       year: 2021,
       technologies: ["Wix", "Diseño Web", "Redes Sociales"],
       isPublic: true,
@@ -45,7 +45,7 @@ export default function App() {
     {
       title: "VIVEL Academia de Emprendimiento",
       description:
-        "Gané el primer lugar en este proyecto, desarrollando una plataforma completa de cursos en línea con características como administrador, pasarela de pagos, y sesiones virtuales en vivo.",
+        "Obtuve el primer lugar en este proyecto, en el cual desarrollé una plataforma integral de cursos en línea. Esta plataforma incluye características como un panel de administración, una pasarela de pagos y la capacidad de realizar sesiones virtuales en vivo.",
       year: 2022,
       technologies: [
         "CodeIgniter",
@@ -63,7 +63,7 @@ export default function App() {
     {
       title: "SISOGEM - Sistema de Órganos de Gobierno del Estado de Michoacán",
       description:
-        "Primer lugar en 2023 con este proyecto. Desarrollé un sistema que incluye firmas digitales, editor de documentos en tiempo real, y repositorio de archivos.",
+        "En 2023, lideré un proyecto que me otorgó el primer lugar. El sistema que desarrollé incorpora características como firmas digitales, un editor de documentos en tiempo real y un repositorio de archivos.",
       year: 2023,
       technologies: [
         "React",
@@ -72,6 +72,10 @@ export default function App() {
         "Node.js",
         "Express",
         "Socket.io",
+        "Ant Design",
+        "TailwindCSS",
+        "Cognito",
+        "Materialui",
       ],
       isPublic: false,
       image: "/sisogem.png", // Ruta a ajustar si es local
@@ -80,9 +84,9 @@ export default function App() {
     {
       title: "Sandar Inmuebles - Página Inmobiliaria",
       description:
-        "Desarrollé una página inmobiliaria con servicios de administración, analíticas, buzón de mensajería y gestión de propiedades.",
+        "Desarrollé una plataforma inmobiliaria integral que incluye servicios de administración, análisis avanzado, un buzón de mensajería y una funcionalidad de gestión de propiedades.",
       year: 2024,
-      technologies: ["React", "TailwindCSS", "Firebase", "Ant Design"],
+      technologies: ["React", "TailwindCSS", "Firebase", "Ant Design", "Materialui"],
       isPublic: true,
       image: "https://sandarinmuebles.com/assets/sandarNegativoo-bN0_grYC.png",
       link: "https://sandarinmuebles.com/",
@@ -90,7 +94,7 @@ export default function App() {
     {
       title: "Box Monitor - Plataforma de Traking",
       description:
-        "Actualmente estoy desarrollando un proyecto de traking que incluye dispositivos incorporados en automóviles que envían datos a una plataforma web.",
+        "Estoy en proceso de desarrollo de un proyecto de seguimiento vehicular, el cual incluye dispositivos integrados en automóviles que transmiten datos a una plataforma web.",
       year: "Actualidad",
       technologies: [
         "Next.js",
@@ -99,6 +103,7 @@ export default function App() {
         "TailwindCSS",
         "Ant Design",
         "MongoDB",
+        "Materialui",
       ],
       isPublic: false,
       image: "/boxmonitor2.png", // Ruta a ajustar si es local
@@ -123,7 +128,7 @@ export default function App() {
     {
       title: "Casa De Los Remedios - Hotel",
       description:
-        "Sistema de reservas para alojamiento en el centro histórico de Morelia. Diseñé toda la marca y presencia web de esta empresa.",
+        "Diseñé un sistema de reservas para alojamiento ubicado en el centro histórico de Morelia. Este proyecto incluyó la creación de toda la identidad de marca y la presencia web de la empresa.",
       year: "Actualidad",
       technologies: ["Wix", "Diseño Web", "Redes Sociales"],
       isPublic: true,
@@ -139,8 +144,8 @@ export default function App() {
       <FloatingBubble />
       <Header />
       <Skills />
-      <ProjectShowcase projects={projects}/>
-      <Projects />
+      <ProjectShowcase projects={projects} />
+      {/* <Projects /> */}
       <Bio />
       {/* <Education /> */}
       <Contact />
@@ -150,7 +155,9 @@ export default function App() {
       <Footer /> */}
       {isHovered && (
         <div
-          className={`bubble-effect ${isStretching ? 'stretch' : ''} ${isRippling ? 'ripple' : ''}`}
+          className={`bubble-effect ${isStretching ? "stretch" : ""} ${
+            isRippling ? "ripple" : ""
+          }`}
           style={{
             top: bubblePosition.y,
             left: bubblePosition.x,
@@ -159,5 +166,5 @@ export default function App() {
         />
       )}
     </div>
-  )
+  );
 }

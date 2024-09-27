@@ -10,10 +10,9 @@ const Navbar = () => {
   const underlineRef = useRef(null);
 
   const menuItems = [
-    { name: "Sobre mí", href: "#bio" },
-    { name: "Educación", href: "#educacion" },
-    { name: "Experiencia", href: "#tecnologias" },
+    { name: "Tecnologias", href: "#tecnologias" },
     { name: "Proyectos", href: "#proyectos" },
+    { name: "Sobre mí", href: "#bio" },
     { name: "Contacto", href: "#contacto" },
   ];
 
@@ -50,7 +49,7 @@ const Navbar = () => {
     for (let i = sections.length - 1; i >= 0; i--) {
       const section = sections[i];
       if (section && section.offsetTop <= scrollPosition) {
-        setActiveIndex(i + 1); // Ajuste de índice ya que excluimos el logo
+        setActiveIndex(i); // Ajuste de índice ya que excluimos el logo
         break;
       }
     }
@@ -87,7 +86,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`bg-deepblack p-4 fixed w-full top-0 z-50 ${
+      className={`bg-fondo p-4 fixed w-full top-0 z-50 ${
         isScrolled ? "bg-white/90 " : ""
       }`}
     >

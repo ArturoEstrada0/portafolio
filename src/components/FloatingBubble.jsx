@@ -1,9 +1,12 @@
-import React from 'react';
-import './FloatingBubble.css'; // Asegúrate de que la ruta del archivo CSS sea correcta
+import React from "react";
+import "./FloatingBubble.css"; // Asegúrate de que la ruta del archivo CSS sea correcta
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { FaFileAlt, FaFilePdf } from "react-icons/fa";
 
 const FloatingBubble = () => {
   return (
-    <div className="floating-bubble">
+    <div className="floating-bubble mr-2">
       <a
         href="https://wa.me/524434395522"
         target="_blank"
@@ -22,7 +25,7 @@ const FloatingBubble = () => {
       </a>
       <a
         href="mailto:arturoestrada301@gmail.com"
-        className="bubble bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-600 transition duration-300"
+        className="bubble bg-red-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-600 transition duration-300"
         aria-label="Correo electrónico"
       >
         <svg
@@ -31,8 +34,27 @@ const FloatingBubble = () => {
           className="w-6 h-6"
           fill="currentColor"
         >
-          <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/>
+          <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
         </svg>
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/arturo-estrada-ram%C3%ADrez-3b1b1b1b1/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bubble bg-blue-800 text-white text-center text-2xl p-2 rounded-full shadow-lg hover:bg-white hover:text-black transition duration-300"
+        aria-label="LinkedIn"
+      >
+        <FontAwesomeIcon icon={faLinkedinIn} />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/arturo-estrada-ram%C3%ADrez-3b1b1b1b1/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bubble bg-red-800 text-white text-center text-2xl p-4 rounded-full shadow-lg hover:bg-blue-600 transition duration-300 flex items-center justify-center"
+        aria-label="CV"
+      >
+        <FaFilePdf />
       </a>
     </div>
   );

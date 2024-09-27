@@ -49,7 +49,7 @@ const Drawer = ({ isOpen, onClose, title, link }) => {
   return (
     <div ref={drawerRef} style={drawerStyle}>
       <div className="flex justify-between items-center bg-gray-100 p-4">
-        <h2 className="text-2xl font-semibold">{title}</h2>
+        <h2 className="text-xl font-fira text-gray-800 font-semibold tracking-tighter">{title}</h2>
         <div className="flex">
           <button className="text-gray-600 hover:text-gray-800" onClick={expandHandler}>
             {expanded ? (

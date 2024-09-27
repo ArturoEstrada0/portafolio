@@ -23,11 +23,16 @@ import {
   JavascriptOriginal,
   MysqlOriginal,
   MysqlOriginalWordmark,
+  MaterialuiOriginal,
 } from "devicons-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFigma, faMeta, faWix } from "@fortawesome/free-brands-svg-icons";
+import { useState } from "react";
+import Drawer from "./Drawer";
 
 export const ProjectCard = ({ project }) => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+ 
   const getIcon = (tech) => {
     switch (tech) {
       case "React":
@@ -308,7 +313,13 @@ export const ProjectCard = ({ project }) => {
   };
 
   return (
-    <div className="bg-black text-white px-6 rounded-lg shadow-lg flex flex-col md:flex-row md:items-center mb-2">
+    <div
+      className="bg-black text-white px-6 rounded-lg shadow-lg flex flex-col md:flex-row md:items-center mb-2 cursor-pointer"
+      onClick={(e) => {
+        e.preventDefault();
+        setDrawerOpen(true);
+      }}
+    >
       <div
         className=" bg-gray-900 border-2 border-gray-800 rounded-md mb-2 pr-2 flex flex-row z-20"
         style={{ background: "linear-gradient(to right, #000000, #1a1a1a)" }}
@@ -356,11 +367,23 @@ export const ProjectCard = ({ project }) => {
             className="mt-4 inline-flex items-center text-blue-400 hover:underline"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => {
+              e.preventDefault();
+              setDrawerOpen(true);
+            }}
           >
-            Ver más
+            Ver Proyecto
           </a>
         </div>
       </div>
+      <Drawer
+        isOpen={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        title={project.title}
+        link={project.link}
+      >
+        {/* Contenido del cajón */}
+      </Drawer>
     </div>
   );
 };
