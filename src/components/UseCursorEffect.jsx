@@ -10,25 +10,26 @@ const useCursorEffect = () => {
   const isPointerCursor = (element) => {
     return window.getComputedStyle(element).cursor === "pointer";
   };
+
   const handleMouseMove = (e) => {
     const elementUnderCursor = document.elementFromPoint(e.clientX, e.clientY);
-  
-    // Establecer la posición de la burbuja
-  setBubblePosition({ x: e.clientX - 15, y: e.clientY - 15 }); // Resta la mitad del tamaño de la burbuja
-  
+
+    // Establecer la posición de la burbuja usando pageX y pageY para compensar el desplazamiento
+    setBubblePosition({ x: e.pageX - 15, y: e.pageY - 15 }); // Resta la mitad del tamaño de la burbuja
+
     if (isPointerCursor(elementUnderCursor)) {
       // Activar el efecto de crecimiento
       setIsStretching(true);
       setIsHovered(true);
     }
-  
+
     // Si el elemento bajo el cursor ha cambiado y el elemento anterior tenía un cursor de puntero
     if (currentElementRef.current && currentElementRef.current !== elementUnderCursor && isPointerCursor(currentElementRef.current)) {
       // Restablecer el estado
       setIsHovered(true);
       setIsStretching(false);
     }
-  
+
     // Actualizar el elemento actual
     currentElementRef.current = elementUnderCursor;
   };

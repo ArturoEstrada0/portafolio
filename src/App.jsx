@@ -40,7 +40,7 @@ export default function App() {
       isPublic: true,
       image:
         "https://static.wixstatic.com/media/5619da_6a9e3f66d7a44ab781aff0e5275f5ebe~mv2.png/v1/fill/w_340,h_109,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Mafra%20logo.png",
-      link: "https://labmafra.mx",
+      link: "https://labmafra.wixsite.com/laboratorios-mafra/shop",
     },
     {
       title: "VIVEL Academia de Emprendimiento",
