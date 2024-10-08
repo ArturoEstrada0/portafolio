@@ -26,31 +26,31 @@ const Education = () => {
             </h2>
             <div>
               <ul className="text-lg text-gray-800 mb-6">
-                <li><strong className='font-semibold mb-1 text-blue-600'>Computación:</strong> Desarrollo de algoritmos y fundamentos de programación.</li>
-                <li><strong className='font-semibold mb-1 text-blue-600'>Programación de videojuegos:</strong> Introducción a la programación con Scratch.</li>
-                <li><strong className='font-semibold mb-1 text-blue-600'>Mecanografía:</strong> Desarrollo de habilidades en el uso eficiente del teclado.</li>
+                <li><strong className='font-semibold mb-1 text-green-600'>Computación:</strong> Desarrollo de algoritmos y fundamentos de programación.</li>
+                <li><strong className='font-semibold mb-1 text-green-600'>Programación de videojuegos:</strong> Introducción a la programación con Scratch.</li>
+                <li><strong className='font-semibold mb-1 text-green-600'>Mecanografía:</strong> Desarrollo de habilidades en el uso eficiente del teclado.</li>
               </ul>
               <h2 className="text-5xl font-bold mb-2 text-gray-800 relative overflow-hidden">
                 <span className="absolute inset-0 border-b-2 border-gray-800"></span>
                 <span className="relative z-10 roboto" style={{ color: 'transparent', webkitTextStroke: '1px black' }}>2016 - 2019</span>
               </h2>
               <ul className="text-lg text-gray-800 mb-6">
-                <li><strong className='font-semibold mb-1 text-blue-600'>Título:</strong> Técnico Informático</li>
-                <li><strong className='font-semibold mb-1 text-blue-600'>Habilidades:</strong> HTML, CSS, Paquetería de Office</li>
-                <li><strong className='font-semibold mb-1 text-blue-600'>Residencias:</strong> Grupo FAME</li>
+                <li><strong className='font-semibold mb-1 text-green-600'>Título:</strong> Técnico Informático</li>
+                <li><strong className='font-semibold mb-1 text-green-600'>Habilidades:</strong> HTML, CSS, Paquetería de Office</li>
+                <li><strong className='font-semibold mb-1 text-green-600'>Residencias:</strong> Grupo FAME</li>
               </ul>
               <h2 className="text-5xl font-bold mb-2 text-gray-800 relative overflow-hidden">
                 <span className="absolute inset-0 border-b-2 border-gray-800"></span>
                 <span className="relative z-10 roboto" style={{ color: 'transparent', webkitTextStroke: '1px black' }}>2020 - Actualidad</span>
               </h2>
               <ul className="text-lg text-gray-800 mb-6">
-                <li><strong className='font-semibold mb-1 text-blue-600'>Próximo Título:</strong> Ingeniero en Sistemas Computacionales con especialidad en Ingeniería de Software</li>
-                <li><strong className='font-semibold mb-1 text-blue-600'>Frontend:</strong> HTML, CSS, Tailwind CSS, Bootstrap 5, React, Next.js</li>
-                <li><strong className='font-semibold mb-1 text-blue-600'>Backend:</strong> Laravel, PHP, Node.js, MongoDB, PostgreSQL, Express.js</li>
-                <li><strong className='font-semibold mb-1 text-blue-600'>DevOps:</strong> AWS (Cognito, S3, DynamoDB, Amplify, IAM), Firebase (Firestore, Storage, Database Realtime), GitHub, GitLab</li>
-                <li><strong className='font-semibold mb-1 text-blue-600'>Diseño:</strong> Figma, Canva (Avanzado), Adobe Illustrator</li>
-                <li><strong className='font-semibold mb-1 text-blue-600'>Otras Herramientas:</strong> JIRA, Trello, Office (Nivel Intermedio Avanzado)</li>
-                <li><strong className='font-semibold mb-1 text-blue-600'>Lenguajes de Programación:</strong> JavaScript (JS), C++</li>
+                <li><strong className='font-semibold mb-1 text-green-600'>Próximo Título:</strong> Ingeniero en Sistemas Computacionales con especialidad en Ingeniería de Software</li>
+                <li><strong className='font-semibold mb-1 text-green-600'>Frontend:</strong> HTML, CSS, Tailwind CSS, Bootstrap 5, React, Next.js</li>
+                <li><strong className='font-semibold mb-1 text-green-600'>Backend:</strong> Laravel, PHP, Node.js, MongoDB, PostgreSQL, Express.js</li>
+                <li><strong className='font-semibold mb-1 text-green-600'>DevOps:</strong> AWS (Cognito, S3, DynamoDB, Amplify, IAM), Firebase (Firestore, Storage, Database Realtime), GitHub, GitLab</li>
+                <li><strong className='font-semibold mb-1 text-green-600'>Diseño:</strong> Figma, Canva (Avanzado), Adobe Illustrator</li>
+                <li><strong className='font-semibold mb-1 text-green-600'>Otras Herramientas:</strong> JIRA, Trello, Office (Nivel Intermedio Avanzado)</li>
+                <li><strong className='font-semibold mb-1 text-green-600'>Lenguajes de Programación:</strong> JavaScript (JS), C++</li>
               </ul>
             
             </div>

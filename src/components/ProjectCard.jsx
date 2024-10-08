@@ -364,7 +364,7 @@ export const ProjectCard = ({ project }) => {
           </div>
           <a
             href={project.link}
-            className="mt-4 inline-flex items-center text-blue-400 hover:underline"
+            className="mt-4 inline-flex items-center text-green-400 hover:underline"
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => {

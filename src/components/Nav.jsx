@@ -103,8 +103,8 @@ const Navbar = () => {
               <a
                 key={index}
                 href={item.href}
-                className={`nav-item-${index} px-3 py-2 text-gray-300 hover:text-blue-300 transition-colors duration-300 ${
-                  activeIndex === index ? "text-blue-300" : ""
+                className={`nav-item-${index} px-3 py-2 text-gray-300 hover:text-green-300 transition-colors duration-300 ${
+                  activeIndex === index ? "text-green-300" : ""
                 }`}
                 onClick={(e) => handleItemClick(e, index)}
                 onMouseEnter={() => handleMouseEnter(index)}
@@ -123,7 +123,7 @@ const Navbar = () => {
           </div>
           {/* Menú hamburguesa para dispositivos móviles */}
           <button
-            className="md:hidden ml-4 text-gray-300 hover:text-blue-300 focus:outline-none"
+            className="md:hidden ml-4 text-gray-300 hover:text-green-300 focus:outline-none"
             onClick={toggleMenu}
           >
             <svg
@@ -150,8 +150,8 @@ const Navbar = () => {
             <a
               key={index}
               href={item.href}
-              className={`block py-2 text-gray-300 hover:text-blue-300 transition-colors duration-300 ${
-                activeIndex === index ? "text-blue-300" : ""
+              className={`block py-2 text-gray-300 hover:text-green-300 transition-colors duration-300 ${
+                activeIndex === index ? "text-green-300" : ""
               }`}
               onClick={(e) => handleItemClick(e, index)}
             >
@@ -162,7 +162,7 @@ const Navbar = () => {
       </div>
       <div
         ref={underlineRef}
-        className="underline absolute bottom-0 h-0.5 bg-blue-300 transition-all duration-300"
+        className="underline absolute bottom-0 h-0.5 bg-green-300 transition-all duration-300"
       ></div>
     </nav>
   );

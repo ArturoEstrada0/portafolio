@@ -25,7 +25,7 @@ const Bio = () => {
             Graduado como técnico informático, realicé prácticas profesionales
             en{" "}
             <a href="https://www.grupofame.com/inicio" target="_blank">
-              <span className=" text-blue-700 font-bold underline">
+              <span className=" text-green-700 font-bold underline">
                 Grupo FAME
               </span>{" "}
             </a>
@@ -46,39 +46,39 @@ const Bio = () => {
             corporativos jurídicos.
           </p>
           <div className="mb-6">
-            <h3 className="text-xl font-semibold mb-2 text-blue-600">
+            <h3 className="text-xl font-semibold mb-2 text-green-600">
               Habilidades
             </h3>
             <div className="flex flex-wrap">
-              <span className="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+              <span className="inline-block bg-green-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
                 Gestión de proyectos
               </span>
-              <span className="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+              <span className="inline-block bg-green-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
                 Resolucion de Problemas
               </span>
-              <span className="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+              <span className="inline-block bg-green-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
                 Comunicación efectiva
               </span>
-              <span className="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+              <span className="inline-block bg-green-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
                 Gestión de Tiempo
               </span>
-              <span className="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+              <span className="inline-block bg-green-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
                 Aprendizaje Continuo
               </span>
-              <span className="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+              <span className="inline-block bg-green-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
                 Trabajo bajo presión
               </span>
-              <span className="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+              <span className="inline-block bg-green-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
                 Diseñador
               </span>
-              <span className="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+              <span className="inline-block bg-green-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
                 Pro-Activo
               </span>
-              {/* <span className="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">Backend</span> */}
-              <span className="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+              {/* <span className="inline-block bg-green-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">Backend</span> */}
+              <span className="inline-block bg-green-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
                 Trabajo en equipo
               </span>
-              <span className="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+              <span className="inline-block bg-green-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
                 Autodidacta
               </span>
               {/* Agrega más habilidades según sea necesario */}

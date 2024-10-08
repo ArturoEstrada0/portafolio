@@ -259,7 +259,7 @@ const Projects = () => {
                   {project.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="inline-block bg-white rounded-md px-3 py-1 text-sm text-gray-600 mr-2 mb-2 border border-blue-gray-100"
+                      className="inline-block bg-white rounded-md px-3 py-1 text-sm text-gray-600 mr-2 mb-2 border border-green-gray-100"
                     >
                       {tech}
                     </span>
@@ -271,7 +271,7 @@ const Projects = () => {
                   {project.isPublic ? (
                     <button
                       onClick={() => openDrawer(project.title, project.link)}
-                      className="block w-full text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+                      className="block w-full text-center bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
                     >
                       <FontAwesomeIcon icon={faCodepen} className="mr-2" />
                       Ver proyecto
