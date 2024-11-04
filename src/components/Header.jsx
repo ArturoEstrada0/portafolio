@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './Header.css';
+import { Coffee, Briefcase, Code, Star } from 'lucide-react';
+import './Header.css'
 
 const TypewriterEffect = ({ words, speed = 100, deleteSpeed = 50, delayBetweenWords = 2000 }) => {
   const [text, setText] = useState('');
@@ -32,6 +33,33 @@ const TypewriterEffect = ({ words, speed = 100, deleteSpeed = 50, delayBetweenWo
   return <span className="text-emerald-400">{text}<span className="animate-pulse">|</span></span>;
 };
 
+const StatusIndicator = () => {
+  const [status, setStatus] = useState(0);
+  const statuses = [
+    { text: "Disponible para proyectos", icon: Coffee, color: "text-green-400" },
+    { text: "Buscando nuevas oportunidades", icon: Briefcase, color: "text-blue-400" },
+    { text: "Desarrollando ideas increíbles", icon: Code, color: "text-purple-400" }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStatus((prev) => (prev + 1) % statuses.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const CurrentIcon = statuses[status].icon;
+
+  return (
+    <div className="flex items-center justify-center space-x-2 bg-gray-800/50 backdrop-blur-sm py-2 px-4 rounded-full animate-bounce-slow">
+      <CurrentIcon className={`w-4 h-4 ${statuses[status].color}`} />
+      <span className={`text-sm ${statuses[status].color}`}>
+        {statuses[status].text}
+      </span>
+    </div>
+  );
+};
+
 const Particles = () => {
   useEffect(() => {
     const particlesContainer = document.getElementById('particles-container');
@@ -50,6 +78,14 @@ const Particles = () => {
   return <div id="particles-container" className="absolute inset-0 z-50 pointer-events-none"></div>;
 };
 
+const StatBox = ({ icon: Icon, value, label }) => (
+  <div className="flex flex-col items-center p-4 bg-gray-800/30 backdrop-blur-sm rounded-lg hover:bg-gray-800/50 transition-all duration-300 transform hover:scale-105">
+    <Icon className="w-6 h-6 text-emerald-400 mb-2" />
+    <div className="text-2xl font-bold text-white">{value}</div>
+    <div className="text-sm text-gray-400">{label}</div>
+  </div>
+);
+
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
   
@@ -65,16 +101,19 @@ const Header = () => {
   };
 
   return (
-    <header id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br z-20 from-slate-900 via-gray-00 ">
-      {/* Efecto de partículas/estrellas */}
+    <header id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br z-20 from-slate-900 via-gray-900 to-slate-900">
       <Particles />
 
-      {/* Contenido principal */}
       <div 
         className={`relative z-20 text-center px-4 transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
       >
+        {/* Indicador de estado */}
+        <div className="mb-6">
+          <StatusIndicator />
+        </div>
+
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
           Hola, soy{' '}
           <TypewriterEffect
@@ -92,6 +131,14 @@ const Header = () => {
             Con 3 años construyendo soluciones web innovadoras
           </span>
         </p>
+
+        {/* Stats Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-8">
+          <StatBox icon={Code} value="8+" label="Proyectos Completados" />
+          <StatBox icon={Star} value="100%" label="Satisfacción" />
+          <StatBox icon={Coffee} value="3+" label="Años de Experiencia" />
+          <StatBox icon={Briefcase} value="16+" label="Clientes Felices" />
+        </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
@@ -112,7 +159,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Overlay gradiente */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900 z-10 pointer-events-none"/>
     </header>
   );
