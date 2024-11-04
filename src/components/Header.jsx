@@ -101,7 +101,7 @@ const Header = () => {
   };
 
   return (
-    <header id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br z-20 from-slate-900 via-gray-900 to-slate-900">
+    <header id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br z-10 from-slate-900 via-gray-900 to-slate-900">
       <Particles />
 
       <div 
