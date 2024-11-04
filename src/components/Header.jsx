@@ -4,7 +4,7 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <header className="relative flex items-center justify-center h-screen overflow-hidden bg-gradient-to-r from-green-500 via-purple-500 to-pink-500">
+    <header id="inicio" className="relative flex items-center justify-center h-screen overflow-hidden bg-gradient-to-r from-green-500 via-purple-500 to-pink-500">
       <div className="absolute top-0 left-0 right-0 bottom-0opacity-30 z-10"></div>
       <div className="relative z-30 p-5 text-center text-white">
         <h1 className="text-6xl font-raleway font-thin tracking-tight mb-4 animate__animated animate__fadeInDown">
