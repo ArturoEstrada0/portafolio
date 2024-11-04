@@ -32,38 +32,24 @@ export default function App() {
 
   const projects = [
     {
-      title: "Laboratorios Mafra - Tienda en Línea",
+      title: "Notaría 64",
       description:
-        "Desarrollé una plataforma de comercio electrónico integrada con redes sociales para optimizar la afluencia de visitantes. Además, participé en la creación de logotipos y diseños corporativos, mejorando la identidad visual de diversas empresas.",
-      year: 2021,
-      technologies: ["Wix", "Diseño Web", "Redes Sociales"],
+        "Estuve involucrado en el desarrollo de un sistema administrativo para una firma notarial en donde se manejan procesos de diferentes trámites que se llevan a cabo. En donde se puede registrar avances, notificar, incluye inteleligencia de negocios y mensajeria.",
+      year: 2024,
+      technologies: [
+        "React",
+        "Diseño Web",
+        "Firebase",
+        "TailwindCSS",
+        "Ant Design",
+      ],
       isPublic: true,
       images: [
-        "https://static.wixstatic.com/media/5619da_6a9e3f66d7a44ab781aff0e5275f5ebe~mv2.png/v1/fill/w_340,h_109,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Mafra%20logo.png",
-        "https://example.com/another-image1.png"
+        "/notaria1.jpeg", // Ruta a ajustar si es local
+        "/notaria2.jpeg",
+        "/notaria3.jpeg",
       ],
       link: "https://labmafra.wixsite.com/laboratorios-mafra/shop",
-    },
-    {
-      title: "VIVEL Academia de Emprendimiento",
-      description:
-        "Obtuve el primer lugar en este proyecto, en el cual desarrollé una plataforma integral de cursos en línea. Esta plataforma incluye características como un panel de administración, una pasarela de pagos y la capacidad de realizar sesiones virtuales en vivo.",
-      year: 2022,
-      technologies: [
-        "CodeIgniter",
-        "PHP",
-        "MySQL",
-        "JavaScript",
-        "HTML",
-        "CSS",
-        "Bootstrap",
-      ],
-      isPublic: true,
-      images: [
-        "/vivel.png", // Ruta a ajustar si es local
-        "https://example.com/another-image2.png"
-      ],
-      link: "#", // Agrega el enlace correspondiente
     },
     {
       title: "SISOGEM - Sistema de Órganos de Gobierno del Estado de Michoacán",
@@ -85,8 +71,7 @@ export default function App() {
       isPublic: false,
       images: [
         "/sisogem.png", // Ruta a ajustar si es local
-        "https://example.com/another-image3.png"
-
+        "https://example.com/another-image3.png",
       ],
       link: "#", // Agrega el enlace correspondiente
     },
@@ -95,13 +80,38 @@ export default function App() {
       description:
         "Desarrollé una plataforma inmobiliaria integral que incluye servicios de administración, análisis avanzado, un buzón de mensajería y una funcionalidad de gestión de propiedades.",
       year: 2024,
-      technologies: ["React", "TailwindCSS", "Firebase", "Ant Design", "Materialui"],
+      technologies: [
+        "React",
+        "TailwindCSS",
+        "Firebase",
+        "Ant Design",
+        "Materialui",
+      ],
       isPublic: true,
       images: [
         "https://sandarinmuebles.com/assets/sandarNegativoo-bN0_grYC.png",
         "./sandar1.jpeg",
       ],
       link: "https://sandarinmuebles.com/",
+    },
+    {
+      title: "Foxpel - Lading Page",
+      description:
+        "Sistema de reservas para alojamiento en el centro histórico de Morelia. Diseñé toda la marca y presencia web de esta empresa.",
+      year: "Actualidad",
+      technologies: [
+        "React",
+        "TailwindCSS",
+        "Firebase",
+        "Node.js",
+        "Diseño Web",
+      ],
+      isPublic: true,
+      images: [
+        "/foxpel.png", // Ruta a ajustar si es local
+        "https://example.com/another-image6.png",
+      ],
+      link: "https://foxpel.mx/", // Agrega el enlace correspondiente
     },
     {
       title: "Box Monitor - Plataforma de Traking",
@@ -120,28 +130,9 @@ export default function App() {
       isPublic: false,
       images: [
         "/boxmonitor2.png", // Ruta a ajustar si es local
-        "https://example.com/another-image5.png"
+        "https://example.com/another-image5.png",
       ],
       link: "https://boxmonitor-85da4.web.app/",
-    },
-    {
-      title: "Foxpel - Lading Page",
-      description:
-        "Sistema de reservas para alojamiento en el centro histórico de Morelia. Diseñé toda la marca y presencia web de esta empresa.",
-      year: "Actualidad",
-      technologies: [
-        "React",
-        "TailwindCSS",
-        "Firebase",
-        "Node.js",
-        "Diseño Web",
-      ],
-      isPublic: true,
-      images: [
-        "/foxpel.png", // Ruta a ajustar si es local
-        "https://example.com/another-image6.png"
-      ],
-      link: "https://foxpel.mx/", // Agrega el enlace correspondiente
     },
     {
       title: "Casa De Los Remedios - Hotel",
@@ -152,10 +143,45 @@ export default function App() {
       isPublic: true,
       images: [
         "/casaremedios.png", // Ruta a ajustar si es local
-        "https://example.com/another-image7.png"
+        "https://example.com/another-image7.png",
       ],
       link: "https://casadelosremediosmorelia.com/", // Agrega el enlace correspondiente
     },
+    {
+      title: "VIVEL Academia de Emprendimiento",
+      description:
+        "Obtuve el primer lugar en este proyecto, en el cual desarrollé una plataforma integral de cursos en línea. Esta plataforma incluye características como un panel de administración, una pasarela de pagos y la capacidad de realizar sesiones virtuales en vivo.",
+      year: 2022,
+      technologies: [
+        "CodeIgniter",
+        "PHP",
+        "MySQL",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Bootstrap",
+      ],
+      isPublic: true,
+      images: [
+        "/vivel.png", // Ruta a ajustar si es local
+        "https://example.com/another-image2.png",
+      ],
+      link: "#", // Agrega el enlace correspondiente
+    },
+    {
+      title: "Laboratorios Mafra - Tienda en Línea",
+      description:
+        "Desarrollé una plataforma de comercio electrónico integrada con redes sociales para optimizar la afluencia de visitantes. Además, participé en la creación de logotipos y diseños corporativos, mejorando la identidad visual de diversas empresas.",
+      year: 2021,
+      technologies: ["Wix", "Diseño Web", "Redes Sociales"],
+      isPublic: true,
+      images: [
+        "https://static.wixstatic.com/media/5619da_6a9e3f66d7a44ab781aff0e5275f5ebe~mv2.png/v1/fill/w_340,h_109,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Mafra%20logo.png",
+        "https://example.com/another-image1.png",
+      ],
+      link: "https://labmafra.wixsite.com/laboratorios-mafra/shop",
+    },
+ 
   ];
 
   return (

@@ -62,7 +62,7 @@ const QuadrantSection = ({ title, skills, className }) => (
 )
 export default function Skills() {
   return (
-    <div className="min-h-screen z-10 bg-gradient-to-br from-black via-gray-900 to-gray-800 py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center overflow-hidden relative">
+    <div className="max-h-screen z-10 bg-gradient-to-br from-black via-gray-900 to-gray-800 py-8 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center overflow-hidden relative">
       <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] -z-10"></div>
       <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-gray-900/20 to-transparent -z-10"></div>
       <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-gray-800/20 to-transparent -z-10"></div>
@@ -91,12 +91,12 @@ export default function Skills() {
             <QuadrantSection
               title="DevOps"
               skills={skills.DevOps}
-              className="border-b border-gray-200"
+              className="border-b border-gray-200 -mb-5"
             />
             <QuadrantSection
               title="Diseño"
               skills={skills.Diseño}
-              className="border-b border-gray-200"
+              className="border-b border-gray-200 -mb-5"
             />
             <QuadrantSection
               title="Otras Herramientas"

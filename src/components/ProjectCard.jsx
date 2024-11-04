@@ -361,7 +361,7 @@ export const ProjectCard = ({ project }) => {
 
   return (
     <div
-      className="bg-black text-white px-6 rounded-lg shadow-lg flex flex-col md:flex-row md:items-center mb-2 cursor-pointer"
+      className="bg-black text-white mt-10 ml-16 px-6 rounded-lg shadow-lg flex flex-col md:flex-row md:items-center mb-2 cursor-pointer"
       onClick={(e) => {
         e.preventDefault();
         setDrawerOpen(true);

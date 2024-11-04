@@ -48,7 +48,7 @@ const FloatingBubble = () => {
         <FontAwesomeIcon icon={faLinkedinIn} />
       </a>
       <a
-        href="/CV Arturo Adrian Estrada De La Torre.pdf"
+        href="/Arturo Adrian Estrada De La Torre Curriculm.pdf"
         download
         target="_blank"
         rel="noopener noreferrer"
