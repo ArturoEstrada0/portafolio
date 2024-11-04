@@ -1,15 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 
-import { Feature } from "./components/Feature";
-import { Blog } from "./components/Blog";
-import { Footer } from "./components/Footer";
 import Nav from "./components/Nav";
 import Header from "./components/Header";
 import Skills from "./components/Skills";
 import Bio from "./components/Bio";
-import Education from "./components/Education";
-import Projects from "./components/Proyects";
 import Contact from "./components/Contact";
 import FloatingBubble from "./components/FloatingBubble";
 import BackToTopButton from "./components/BackToTop";
@@ -18,18 +13,27 @@ import Squares from "./components/Squares";
 import ProjectShowcase from "./components/ProjectShowcase";
 
 export default function App() {
-  const {
-    isHovered,
-    bubblePosition,
-    isStretching,
-    bubbleColor,
-    isRippling,
-    handleMouseEnter,
-    handleMouseLeave,
-    handleMouseMove,
-    handleButtonHover, // Cambiar el color de la burbuja y activar el efecto de onda
-  } = useCursorEffect();
+  const { isHovered, bubblePosition, isStretching, bubbleColor, isRippling } =
+    useCursorEffect();
 
+  useEffect(() => {
+    const handleTabVisibilityChange = () => {
+      if (document.visibilityState === "visible") {
+        document.title = "¡Arturo Estrada!";
+      } else {
+        document.title = "¡Vuelve :( !";
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleTabVisibilityChange);
+
+    return () => {
+      document.removeEventListener(
+        "visibilitychange",
+        handleTabVisibilityChange
+      );
+    };
+  }, []);
   const projects = [
     {
       title: "Notaría 64",
@@ -75,7 +79,6 @@ export default function App() {
       isPublic: false,
       images: [
         "/sisogem.png", // Ruta a ajustar si es local
-        "https://example.com/another-image3.png",
       ],
       link: "#", // Agrega el enlace correspondiente
     },
@@ -94,7 +97,11 @@ export default function App() {
       isPublic: true,
       images: [
         "https://sandarinmuebles.com/assets/sandarNegativoo-bN0_grYC.png",
-        "./sandar1.jpeg",
+        "./sandar4.jpeg",
+        "./sandar6.jpeg",
+        "./sandar7.jpeg",
+        "./sandar8.jpeg",
+        "./sandar9.png",
       ],
       link: "https://sandarinmuebles.com/",
     },
@@ -118,7 +125,6 @@ export default function App() {
         "/foxpel4.jpeg", // Ruta a ajustar si es local
         "/foxpel5.jpeg", // Ruta a ajustar si es local
         "/foxpel6.jpeg", // Ruta a ajustar si es local
-
       ],
       link: "https://foxpel.mx/", // Agrega el enlace correspondiente
     },
@@ -142,7 +148,6 @@ export default function App() {
         "/boxmonitor.jpeg", // Ruta a ajustar si es local
         "/boxmonitor3.jpeg", // Ruta a ajustar si es local
         "/boxmonitor2.jpeg", // Ruta a ajustar si es local
-
       ],
       link: "https://boxmonitor-85da4.web.app/",
     },
@@ -158,7 +163,6 @@ export default function App() {
         "/casa.jpeg", // Ruta a ajustar si es local
         "/casa2.jpeg", // Ruta a ajustar si es local
         "/casa3.jpeg", // Ruta a ajustar si es local
-
       ],
       link: "https://casadelosremediosmorelia.com/", // Agrega el enlace correspondiente
     },
@@ -179,7 +183,6 @@ export default function App() {
       isPublic: true,
       images: [
         "/vivel.png", // Ruta a ajustar si es local
-        "https://example.com/another-image2.png",
       ],
       link: "#", // Agrega el enlace correspondiente
     },
@@ -200,7 +203,6 @@ export default function App() {
       ],
       link: "https://labmafra.wixsite.com/laboratorios-mafra/shop",
     },
- 
   ];
 
   return (
