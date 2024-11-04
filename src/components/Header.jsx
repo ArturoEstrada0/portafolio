@@ -1,58 +1,119 @@
-import React, { useState, useRef } from "react";
-import { Typewriter } from "react-simple-typewriter"; // Importamos react-simple-typewriter
-import "./Header.css";
+import React, { useState, useEffect } from 'react';
+import './Header.css';
+
+const TypewriterEffect = ({ words, speed = 100, deleteSpeed = 50, delayBetweenWords = 2000 }) => {
+  const [text, setText] = useState('');
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  
+  useEffect(() => {
+    const currentWord = words[wordIndex];
+    
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        if (text.length < currentWord.length) {
+          setText(currentWord.slice(0, text.length + 1));
+        } else {
+          setTimeout(() => setIsDeleting(true), delayBetweenWords);
+        }
+      } else {
+        if (text.length > 0) {
+          setText(currentWord.slice(0, text.length - 1));
+        } else {
+          setIsDeleting(false);
+          setWordIndex((prev) => (prev + 1) % words.length);
+        }
+      }
+    }, isDeleting ? deleteSpeed : speed);
+
+    return () => clearTimeout(timeout);
+  }, [text, isDeleting, wordIndex, words, speed, deleteSpeed, delayBetweenWords]);
+
+  return <span className="text-emerald-400">{text}<span className="animate-pulse">|</span></span>;
+};
+
+const Particles = () => {
+  useEffect(() => {
+    const particlesContainer = document.getElementById('particles-container');
+    if (particlesContainer && particlesContainer.children.length === 0) {
+      for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'absolute w-1 h-1 bg-white rounded-full animate-twinkle';
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+        particle.style.animationDelay = `${Math.random() * 5}s`;
+        particlesContainer.appendChild(particle);
+      }
+    }
+  }, []);
+
+  return <div id="particles-container" className="absolute inset-0 z-50 pointer-events-none"></div>;
+};
 
 const Header = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <header id="inicio" className="relative flex items-center justify-center h-screen overflow-hidden bg-gradient-to-r from-green-500 via-purple-500 to-pink-500">
-      <div className="absolute top-0 left-0 right-0 bottom-0opacity-30 z-10"></div>
-      <div className="relative z-30 p-5 text-center text-white">
-        <h1 className="text-6xl font-raleway font-thin tracking-tight mb-4 animate__animated animate__fadeInDown">
-          Hola, soy{" "}
-          <span className="text-green-400">
-            <Typewriter
-              words={[
-                "Arturo Estrada",
-                "Un Desarrollador Frontend",
-                "Un Freelancer de Confianza",
-              ]}
-              loop={5}
-              cursor
-              cursorStyle="|"
-              typeSpeed={100}
-              deleteSpeed={30}
-              delaySpeed={1000}
-            />
-          </span>
+    <header id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br z-20 from-slate-900 via-gray-00 ">
+      {/* Efecto de partículas/estrellas */}
+      <Particles />
+
+      {/* Contenido principal */}
+      <div 
+        className={`relative z-20 text-center px-4 transition-all duration-1000 transform ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+        }`}
+      >
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+          Hola, soy{' '}
+          <TypewriterEffect
+            words={[
+              'Arturo Estrada',
+              'Desarrollador Frontend',
+              'Freelancer Creativo',
+            ]}
+          />
         </h1>
-        <p className="text-xl font-fira tracking-tight font-light mb-4 animate__animated animate__fadeInUp animate__delay-1s">
-          Con 3 años de experiencia.
+        
+        <p className="text-lg md:text-xl text-gray-300 mb-8 font-light">
+          Transformando ideas en experiencias digitales excepcionales
+          <span className="block mt-2 text-sm md:text-base">
+            Con 3 años construyendo soluciones web innovadoras
+          </span>
         </p>
 
-        <div className="mt-8 animate__animated animate__fadeIn animate__delay-2s">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
-            className="bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded-full mx-2 transition duration-300 transform hover:scale-110"
-            onClick={() => scrollToSection("contacto")}
+            onClick={() => scrollToSection('proyectos')}
+            className="group relative px-6 py-3 w-48 overflow-hidden rounded-lg bg-gradient-to-r from-emerald-500 to-emerald-400 text-white shadow-lg transition-all duration-300 hover:scale-105"
           >
-            Conéctate Conmigo
+            <span className="relative z-10">Ver Proyectos</span>
+            <div className="absolute inset-0 z-0 bg-gradient-to-r from-emerald-600 to-emerald-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100"/>
           </button>
+          
           <button
-            className="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full mx-2 transition duration-300 transform hover:scale-110"
-            onClick={() => scrollToSection("proyectos")}
+            onClick={() => scrollToSection('contacto')}
+            className="group relative px-6 py-3 w-48 overflow-hidden rounded-lg bg-transparent text-white border-2 border-purple-500 transition-all duration-300 hover:scale-105"
           >
-            Ver Mi Trabajo
+            <span className="relative z-10">Contactar</span>
+            <div className="absolute inset-0 z-0 bg-purple-500 opacity-0 transition-opacity duration-300 group-hover:opacity-20"/>
           </button>
         </div>
       </div>
-      <div className="absolute top-0 bottom-0 left-0 right-0 z-20">
-        <div
-          className="w-full h-full bg-cover bg-center bg-fixed"
-          style={{
-            backgroundImage:
-              'url("https://source.unsplash.com/random/1600x900")',
-          }}
-        ></div>
-      </div>
+
+      {/* Overlay gradiente */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900 z-10 pointer-events-none"/>
     </header>
   );
 };

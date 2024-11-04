@@ -22,3 +22,12 @@
   transform-origin: bottom left;
 }
 
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.animate-twinkle {
+  animation: twinkle 3s infinite;
+}

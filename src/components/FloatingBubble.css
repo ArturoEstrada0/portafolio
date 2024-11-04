@@ -1,25 +1,52 @@
 @keyframes stretch {
-    0%, 100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.4);
-    }
+  0%, 100% {
+    transform: scale(1);
   }
-  
-  .bubble:hover {
-    animation: stretch 0.4s ease-in-out forwards;
+  50% {
+    transform: scale(1.4);
   }
-  
+}
 
-  .floating-bubble {
-    position: fixed;
-    right: 1rem; /* Ajusta esta propiedad según tu preferencia de distancia del borde derecho */
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem; /* Espacio entre los elementos dentro del contenedor */
-    z-index: 50; /* Ajusta según sea necesario */
-  }
-  
+.bubble:hover {
+  animation: stretch 0.4s ease-in-out forwards;
+}
+
+.floating-bubble {
+  position: fixed;
+  right: 1rem; /* Ajusta esta propiedad según tu preferencia de distancia del borde derecho */
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Espacio entre los elementos dentro del contenedor */
+  z-index: 50; /* Ajusta según sea necesario */
+}
+
+/* Estilos para iconos en blanco y negro por defecto */
+.bubble {
+  filter: grayscale(100%);
+  transition: filter 0.3s, background-color 0.3s, color 0.3s;
+}
+
+/* Estilos para iconos en color al hacer hover */
+.bubble:hover {
+  filter: grayscale(0%);
+}
+
+/* Colores originales para los iconos */
+.bubble.bg-emerald-500:hover {
+  background-color: #22c55e; /* Color original de WhatsApp */
+}
+
+.bubble.bg-red-500:hover {
+  background-color: #ef4444; /* Color original de Correo electrónico */
+}
+
+.bubble.bg-blue-800:hover {
+  background-color: #1d4ed8; /* Color original de LinkedIn */
+  color: #ffffff; /* Color original del texto de LinkedIn */
+}
+
+.bubble.bg-red-800:hover {
+  background-color: #b91c1c; /* Color original del CV */
+}
