@@ -101,7 +101,7 @@ const Header = () => {
   };
 
   return (
-    <header id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br z-10 from-slate-900 via-gray-900 to-slate-900">
+    <header id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br z-10 from-slate-900 via-gray-900 to-gray-900">
       <Particles />
 
       <div 
@@ -159,7 +159,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900 z-10 pointer-events-none"/>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#141414] z-10 pointer-events-none"/>
     </header>
   );
 };
