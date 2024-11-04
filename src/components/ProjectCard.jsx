@@ -27,7 +27,7 @@ import {
 } from "devicons-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFigma, faMeta, faWix } from "@fortawesome/free-brands-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Drawer from "./Drawer";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -315,6 +315,7 @@ export const ProjectCard = ({ project }) => {
     }
   };
 
+
   const slideVariants = {
     enter: (direction) => ({
       x: direction > 0 ? 1000 : -1000,
@@ -331,12 +332,12 @@ export const ProjectCard = ({ project }) => {
       opacity: 0,
     }),
   };
-
+  
   const swipeConfidenceThreshold = 10000;
   const swipePower = (offset, velocity) => {
     return Math.abs(offset) * velocity;
   };
-
+  
   const paginate = (newDirection) => {
     setDirection(newDirection);
     if (Array.isArray(project.images) && project.images.length > 1) {
@@ -348,15 +349,28 @@ export const ProjectCard = ({ project }) => {
       });
     }
   };
-
+  
   const nextImage = (e) => {
     e.stopPropagation();
     paginate(1);
   };
-
+  
   const prevImage = (e) => {
     e.stopPropagation();
     paginate(-1);
+  };
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      paginate(1);
+    }, 3000); // Cambia 3000 por el intervalo deseado en milisegundos
+  
+    return () => clearInterval(interval); // Limpia el intervalo cuando el componente se desmonte
+  }, []);
+  
+
+  const handleClose = (value) => {
+    setDrawerOpen(false);
   };
 
   return (
@@ -499,14 +513,14 @@ export const ProjectCard = ({ project }) => {
           </a>
         </div>
       </div>
-      <Drawer
-        isOpen={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
-        title={project.title}
-        link={project.link}
-      >
-        {/* Contenido del cajón */}
-      </Drawer>
+      {drawerOpen && (
+        <Drawer
+          isOpen={drawerOpen}
+          onClose={handleClose}
+          title={project.title}
+          link={project.link}
+        />
+      )}
     </div>
   );
 };

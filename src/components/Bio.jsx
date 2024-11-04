@@ -2,17 +2,17 @@ import React from "react";
 import "../assets/card.css";
 const Bio = () => {
   return (
-    <section id="bio" className="py-12 ml-24 relative z-10 text-white">
+    <section id="bio" className="py-12 ml-20 relative z-10 text-white">
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center">
-        <div className="md:w-1/2 ml-10 mb-6 md:mb-0 animate__animated animate__fadeInLeft">
+        <div className="md:w-1/2 mb-6 md:mb-0 animate__animated animate__fadeInLeft">
           <img
             src="../../perfil1.jpeg"
             alt="Tu Foto"
-            className="w-auto rounded-lg shadow-lg"
+            className="w-auto rounded-lg shadow-lg object-cover"
             style={{ height: "80vh" }}
           />
         </div>
-        <div className="md:w-2/3 md:pl-10 animate__animated animate__fadeInRight mr-32">
+        <div className="md:w-3/4 md:pl-10 animate__animated animate__fadeInRight mr-14">
           <h2 className="text-3xl font-semibold mb-4 text-white">Sobre mí</h2>
           <p className="post-title text-lg text-white mb-6">
             Graduado como técnico informático, realicé prácticas profesionales

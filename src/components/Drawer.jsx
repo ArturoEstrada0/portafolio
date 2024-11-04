@@ -38,9 +38,11 @@ const Drawer = ({ isOpen, onClose, title, link }) => {
     };
   }, [isOpen, onClose]);
 
-  const closeHandler = () => {
+  const closeHandler = (event) => {
+    event.stopPropagation(); // Evita la propagación.
     onClose();
   };
+  
 
   const expandHandler = () => {
     setExpanded(!expanded);

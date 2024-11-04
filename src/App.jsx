@@ -45,11 +45,15 @@ export default function App() {
       ],
       isPublic: true,
       images: [
-        "/notaria1.jpeg", // Ruta a ajustar si es local
+        "/notaria64_5.jpeg", // Ruta a ajustar si es local
+        "/notaria64.jpeg", // Ruta a ajustar si es local
+        "/notaria64_2.jpeg", // Ruta a ajustar si es local
+        "/notaria64_3.jpeg", // Ruta a ajustar si es local
+        "/notaria64_4.png", // Ruta a ajustar si es local
         "/notaria2.jpeg",
         "/notaria3.jpeg",
       ],
-      link: "https://labmafra.wixsite.com/laboratorios-mafra/shop",
+      link: "https://notaria-64.vercel.app/",
     },
     {
       title: "SISOGEM - Sistema de Órganos de Gobierno del Estado de Michoacán",
@@ -108,8 +112,13 @@ export default function App() {
       ],
       isPublic: true,
       images: [
-        "/foxpel.png", // Ruta a ajustar si es local
-        "https://example.com/another-image6.png",
+        "/foxpel.jpeg", // Ruta a ajustar si es local
+        "/foxpel2.png", // Ruta a ajustar si es local
+        "/foxpel3.png", // Ruta a ajustar si es local
+        "/foxpel4.jpeg", // Ruta a ajustar si es local
+        "/foxpel5.jpeg", // Ruta a ajustar si es local
+        "/foxpel6.jpeg", // Ruta a ajustar si es local
+
       ],
       link: "https://foxpel.mx/", // Agrega el enlace correspondiente
     },
@@ -130,7 +139,10 @@ export default function App() {
       isPublic: false,
       images: [
         "/boxmonitor2.png", // Ruta a ajustar si es local
-        "https://example.com/another-image5.png",
+        "/boxmonitor.jpeg", // Ruta a ajustar si es local
+        "/boxmonitor3.jpeg", // Ruta a ajustar si es local
+        "/boxmonitor2.jpeg", // Ruta a ajustar si es local
+
       ],
       link: "https://boxmonitor-85da4.web.app/",
     },
@@ -143,7 +155,10 @@ export default function App() {
       isPublic: true,
       images: [
         "/casaremedios.png", // Ruta a ajustar si es local
-        "https://example.com/another-image7.png",
+        "/casa.jpeg", // Ruta a ajustar si es local
+        "/casa2.jpeg", // Ruta a ajustar si es local
+        "/casa3.jpeg", // Ruta a ajustar si es local
+
       ],
       link: "https://casadelosremediosmorelia.com/", // Agrega el enlace correspondiente
     },
@@ -177,7 +192,11 @@ export default function App() {
       isPublic: true,
       images: [
         "https://static.wixstatic.com/media/5619da_6a9e3f66d7a44ab781aff0e5275f5ebe~mv2.png/v1/fill/w_340,h_109,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Mafra%20logo.png",
-        "https://example.com/another-image1.png",
+        "./mafra.jpeg",
+        "./mafra2.jpeg",
+        "./mafra3.jpeg",
+        "./mafra4.png",
+        "./mafra5.png",
       ],
       link: "https://labmafra.wixsite.com/laboratorios-mafra/shop",
     },
