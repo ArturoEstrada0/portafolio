@@ -24,7 +24,7 @@ import {
   AntdesignOriginal,
 } from "devicons-react";
 import Drawer from "./Drawer";
-import { motion } from "framer-motion";
+
 
 const Projects = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);

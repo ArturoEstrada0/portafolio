@@ -38,8 +38,10 @@ export default function App() {
       year: 2021,
       technologies: ["Wix", "Diseño Web", "Redes Sociales"],
       isPublic: true,
-      image:
+      images: [
         "https://static.wixstatic.com/media/5619da_6a9e3f66d7a44ab781aff0e5275f5ebe~mv2.png/v1/fill/w_340,h_109,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Mafra%20logo.png",
+        "https://example.com/another-image1.png"
+      ],
       link: "https://labmafra.wixsite.com/laboratorios-mafra/shop",
     },
     {
@@ -57,7 +59,10 @@ export default function App() {
         "Bootstrap",
       ],
       isPublic: true,
-      image: "/vivel.png", // Ruta a ajustar si es local
+      images: [
+        "/vivel.png", // Ruta a ajustar si es local
+        "https://example.com/another-image2.png"
+      ],
       link: "#", // Agrega el enlace correspondiente
     },
     {
@@ -78,7 +83,11 @@ export default function App() {
         "Materialui",
       ],
       isPublic: false,
-      image: "/sisogem.png", // Ruta a ajustar si es local
+      images: [
+        "/sisogem.png", // Ruta a ajustar si es local
+        "https://example.com/another-image3.png"
+
+      ],
       link: "#", // Agrega el enlace correspondiente
     },
     {
@@ -88,7 +97,10 @@ export default function App() {
       year: 2024,
       technologies: ["React", "TailwindCSS", "Firebase", "Ant Design", "Materialui"],
       isPublic: true,
-      image: "https://sandarinmuebles.com/assets/sandarNegativoo-bN0_grYC.png",
+      images: [
+        "https://sandarinmuebles.com/assets/sandarNegativoo-bN0_grYC.png",
+        "./sandar1.jpeg",
+      ],
       link: "https://sandarinmuebles.com/",
     },
     {
@@ -106,7 +118,10 @@ export default function App() {
         "Materialui",
       ],
       isPublic: false,
-      image: "/boxmonitor2.png", // Ruta a ajustar si es local
+      images: [
+        "/boxmonitor2.png", // Ruta a ajustar si es local
+        "https://example.com/another-image5.png"
+      ],
       link: "https://boxmonitor-85da4.web.app/",
     },
     {
@@ -122,7 +137,10 @@ export default function App() {
         "Diseño Web",
       ],
       isPublic: true,
-      image: "/foxpel.png", // Ruta a ajustar si es local
+      images: [
+        "/foxpel.png", // Ruta a ajustar si es local
+        "https://example.com/another-image6.png"
+      ],
       link: "https://foxpel.mx/", // Agrega el enlace correspondiente
     },
     {
@@ -132,7 +150,10 @@ export default function App() {
       year: "Actualidad",
       technologies: ["Wix", "Diseño Web", "Redes Sociales"],
       isPublic: true,
-      image: "/casaremedios.png", // Ruta a ajustar si es local
+      images: [
+        "/casaremedios.png", // Ruta a ajustar si es local
+        "https://example.com/another-image7.png"
+      ],
       link: "https://casadelosremediosmorelia.com/", // Agrega el enlace correspondiente
     },
   ];
