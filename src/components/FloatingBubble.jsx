@@ -24,7 +24,7 @@ const FloatingBubble = () => {
         </svg>
       </a>
       <a
-        href="mailto:arturoestrada301@gmail.com"
+        href="mailto:arturo_estrada0@outlook.com"
         className="bubble bg-red-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-600 transition duration-300"
         aria-label="Correo electrónico"
       >
@@ -39,7 +39,7 @@ const FloatingBubble = () => {
       </a>
 
       <a
-        href="https://www.linkedin.com/in/arturo-estrada-ram%C3%ADrez-3b1b1b1b1/"
+        href="https://www.linkedin.com/in/arturo-estrada-desarrollador-web"
         target="_blank"
         rel="noopener noreferrer"
         className="bubble bg-blue-800 text-white text-center text-2xl p-2 rounded-full shadow-lg hover:bg-white hover:text-black transition duration-300"

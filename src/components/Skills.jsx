@@ -122,7 +122,7 @@ const SkillsPage = () => {
         </div>
 
         {/* Sección de experiencia */}
-        <div className="lg:w-1/3 bg-[#1a1f2e] rounded-xl p-8 text-center border-2 border-gray-800 flex flex-col justify-center h-auto z-50">
+        <div className="lg:w-1/3 bg-[#1a1f2e] rounded-xl p-8 text-center border-2 border-gray-800 flex flex-col justify-center h-auto z-30">
           <h2 className="text-9xl font-bold mb-2">3</h2>
           <p className="text-4xl font-medium mb-6 leading-tight">
             Años de
